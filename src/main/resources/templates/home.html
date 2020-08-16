@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+ <meta name="_csrf" content="${_csrf.token}"/>
+<title>Insert title here</title>
+ 
+</head>
+<body>
+<form action="addAccount" method="POST">
+		<input type="text" name="bid">Bank Id<br>
+		<input type="text" name="accno">Account number<br>
+		
+		<input type="text" name="balance"><strong>Balance</strong><br>
+		<input type="text" name="bname">Name<br>
+
+		<input type="submit"><br>
+	</form>
+	<hr />
+	<a href="http://localhost:8181/bank/home/getallAccount">DIsplay all account details!</a>
+	
+	<form action="home/getByNum">
+		<input type="text" name="accno"><br >
+		<input type="submit"> 
+	</form>
+	<hr />
+	<form action="home/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file" />
+    <input type="submit" name="submit" value="Submit" />
+</form>
+
+
+</body>
+</html>

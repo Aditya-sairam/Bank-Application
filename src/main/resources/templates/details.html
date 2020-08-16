@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<style>
+		.table {
+   		position: absolute; 
+            
+            top: 80px; 
+            left:  0; 
+            right: 0; 
+            bottom: 0; 
+            margin: auto;
+   			width: 50% !important; 
+   }
+   #Outer { 
+            border: 2px solid black; 
+            height: 300px; 
+            position: relative; 
+        } 
+        body{
+        background: #9053c7;
+        }
+	</style>
+
+</head>
+		<body>
+								
+					<table class="table table-bordered table-dark">
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">TAX-REF-NO</th>
+								<th class="column2">ACCOUNT NUMBER</th>
+								<th class="column3">DATE</th>
+								<th class="column4">DEBIT</th>
+								<th class="column5">DESCRIPTION</th>
+								<th class="column6">WITHDRAWLS</th>
+								<th class="column7">RUNNING BALANCE</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr  th:each = "details: ${accounts}">
+									<td class="column1" th:text="${details.taxref}"></td>
+									<td class="column2" th:text="${details.accno}"></td>
+									<td class="column3" th:text="${details.datetime}"></td>
+									<td class="column4" th:text="${details.debit}"></td>
+									<td class="column5" th:text="${details.description}"></td>
+									<td class="column6" th:text="${details.withdrawls}"></td>
+									<td class="column7" th:text="${details.runningbalance}"></td>
+								</tr>
+						</tbody>
+					</table>
+				
+				
+				
+
+
+	
+
+
+</body>
+</html>

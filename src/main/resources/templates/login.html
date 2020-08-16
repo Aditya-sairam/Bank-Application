@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="icon" type="image/png" th:href="@{/styles/images/icons/favicon.ico}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/vendor/bootstrap/css/bootstrap.min.css}" />
+
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/fonts/font-awesome-4.7.0/css/font-awesome.min.css}" />
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/vendor/animate/animate.css}">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/vendor/css-hamburgers/hamburgers.min.css}">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/vendor/select2/select2.min.css}">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/css/util.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/styles/css/main.css}">
+</head>
+<body>
+  	
+  	
+  
+  <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img th:src="@{/styles/images/img-01.png}" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" action="/login" method='POST'>
+					<span class="login100-form-title">
+						Member Login
+					</span>
+					
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					
+					
+						<input  class="input100" type='text' name='username' placeholder="Username" value=''>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						
+						<input class="input100" type='password'  placeholder="Password" name='password' />
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						
+						<input  class="login100-form-btn" name="submit" type="submit" value="submit" />
+					</div>
+					</form>
+					
+					<div class="text-center p-t-12">
+						<form action="bank/home/getByNum">
+						<h2>Check your account status</h2>
+							<input  class="input100" type="text" name="accno" placeholder="Account Number"><br >
+							
+							<input class="login100-form-btn" type="submit"> 
+							</form>
+						
+						
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script th:src="@{/styles/vendor/jquery/jquery-3.2.1.min.js}"></script>
+<!--===============================================================================================-->
+	<script th:src="@{/styles/vendor/bootstrap/js/popper.js}"></script>
+	<script th:src="@{/styles/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<!--===============================================================================================-->
+	<script th:src="@{/styles/vendor/select2/select2.min.js}"></script>
+<!--===============================================================================================-->
+	<script th:src="@{/styles/vendor/tilt/tilt.jquery.min.js}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script th:src="@{/styles/js/main.js}"></script>
+</body>
+</html>

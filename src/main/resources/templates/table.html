@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" th:href="@{/styles/images/icons/favicon.ico}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="@{styles/vendor/bootstrap/css/bootstrap.min.css}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="@{/styles/fonts/font-awesome-4.7.0/css/font-awesome.min.css}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="@{/styles/vendor/animate/animate.css}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="@{/styles/vendor/select2/select2.min.css}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="@{/styles/vendor/perfect-scrollbar/perfect-scrollbar.css}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="@{/styles/css/util.css}" />
+	<link rel="stylesheet" type="text/css" href="@{/styles/css/main.css}" />
+<!--===============================================================================================-->
+<style>
+
+    
+    .father {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+</style>
+</head>
+<body>
+	
+			<div class="father">
+					<table class="table">
+						<thead class="thead-dark">
+							<tr class="table100-head">
+								<th class="column1">TAX-REF-NO</th>
+								<th class="column2">ACCOUNT NUMBER</th>
+								<th class="column3">DATE</th>
+								<th class="column4">DEBIT</th>
+								<th class="column5">DESCRIPTION</th>
+								<th class="column6">RUNNING BALANCE</th>
+								<th class="column7">WITHDRAWLS</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr  th:each = "details: ${account}">
+									<td class="column1" th:text="${details.taxref}"></td>
+									<td class="column2" th:text="${details.accno}"></td>
+									<td class="column3" th:text="${details.datetime}"></td>
+									<td class="column4" th:text="${details.debit}"></td>
+									<td class="column5" th:text="${details.description}"></td>
+									<td class="column6" th:text="${details.runningbalance}"></td>
+									<td class="column7" th:text="${details.withdrawls}"></td>
+									<td><a th:href="@{/downloadcsv/__${details.accno}__/account.csv}">Download CSV</a></td>
+								</tr>
+						</tbody>
+					</table>
+				</div>
+				<div>
+					
+				</div>
+		
+	
+
+<!--===============================================================================================-->	
+	<script th:src="@{/styles/vendor/jquery/jquery-3.2.1.min.js}"></script>
+<!--===============================================================================================-->
+	<script src="@{/styles/vendor/bootstrap/js/popper.js}"></script>
+	<script src="@{styles/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<!--===============================================================================================-->
+	<script src="@{/styles/vendor/select2/select2.min.js}"></script>
+<!--===============================================================================================-->
+	<script src="@{/styles/js/main.js}"></script>
+
+</body>
+</html>
